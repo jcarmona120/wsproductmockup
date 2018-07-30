@@ -1,0 +1,193 @@
+@font-face {
+  font-family: Flama;
+  src: url('FlamaBook Regular.otf');
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+#brand_logo {
+  margin-top: 1em;
+}
+
+nav {
+  width: 1050px;
+  margin: 0 auto;
+}
+
+#navlinks {
+  display: flex;
+  justify-content: space-around;
+
+  background-color: black;
+  color: white;
+}
+
+#navlinks > li {
+  padding: 0.7em .8em;
+  list-style: none;
+  white-space: nowrap;
+  font-family: Flama;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.navlinks__link {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.72em;
+}
+
+.navlinks__link:hover {
+  background-color: lightgray;
+}
+
+.home {
+  background-color: #2a3658;
+}
+
+#breadcrumb {
+  width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  list-style: none;
+
+  font-family: Flama;
+  font-size: .85em;
+  color: gray;
+}
+
+.breadcrumb-link::before {
+  content: '>';
+  padding: 0 .4em;
+}
+
+.breadcrumb-link {
+
+}
+
+#breadcrumb li:last-child {
+  color: black;
+}
+
+/* make the button shrink slightly on click */
+button {
+  padding: 0;
+  border: 0;
+}
+
+/******* Product Images *********/
+
+#productGrid {
+  width: 1050px;
+  margin: 1em auto 0;
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-gap: 10%;
+  grid-template-areas: "product-image product-information";
+}
+
+.product-image {
+  grid-area: product-image;
+}
+
+.product-information {
+  grid-area: product-information;
+}
+
+.product-title {
+  font: 'Times New Roman', sans-serif;
+  font-weight: 100;
+}
+
+.product-description {
+  font-family: Flama;
+}
+
+.product-bullets {
+  margin-left: 1.5em;
+}
+
+.product-bullet-item {
+  display: flex;
+  align-items: center;
+}
+
+#bullet {
+  font-size: 1.3em;
+  margin-right: .4em;
+}
+
+.product-price {
+  font-size: 1.5em;
+}
+
+.product-thumbnails__images {
+  display: flex;
+  list-style: none;
+}
+
+.product-thumbnails__images > li {
+  padding: 1em 1em;
+  margin: 1em 0;
+}
+
+.product-quantity {
+  width: 4em;
+  height: 2em;
+  margin-bottom: 1.5em;
+  text-align: center;
+  font-size: 1em;
+  font-family: Flama;
+  box-shadow: inset -1px 1px 23px -7px;
+}
+
+.product-panels {
+  border-top: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+}
+
+.product-summary {
+  display: flex;
+}
+
+/* PRODUCT INFORMATION ARROW */
+
+.info-drawer {
+  display: none;
+}
+
+.accordion-panel {
+  padding: 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-summary {
+}
+
+.middle-drawer {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: .5em solid transparent;
+  border-bottom: .5em solid transparent;
+  border-left: .5em solid black;
+  margin-right: .5em;
+}
