@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Header from './components/header'
 import Nav from './components/nav'
 import Product from './components/product'
+import Footer from './components/footer';
 
 import catalog from './db.js'
 
@@ -21,12 +22,12 @@ class App extends Component {
             <div>
                 <Header />
                 <Nav product={this.state.product} />
-                <Product catalog={catalog} product={this.state.product}/>
+                <Product catalog={catalog} product={this.state.product} />
+                <Footer />
             </div>
-    
+
         )
     }
-    
 }
 
 render(<App />, document.getElementById('root'))

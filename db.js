@@ -19,7 +19,7 @@ module.exports = [
         },
         {
             id: 2,
-            name: "Williams-Sonoma Classic Apron, French Blue",
+            name: "Williams-Sonoma Classic Apron, Black Stripes",
             properties: {
                 description: "A generously sized is a necessity in any kitchen, and ours will brighten yours with lively color. Sewn of thick cotton, it can be personalized or monogrammed with up to nine characters, all the same height, embroidered in your choice of color. An apron of this quality makes a welcome gift for any cook.",
                 price: 19.95,
@@ -37,7 +37,7 @@ module.exports = [
         },
         {
             id: 3,
-            name: "Williams-Sonoma Classic Apron, French Blue",
+            name: "Williams-Sonoma Classic Apron, Green Stripes",
             properties: {
                 description: "A generously sized is a necessity in any kitchen, and ours will brighten yours with lively color. Sewn of thick cotton, it can be personalized or monogrammed with up to nine characters, all the same height, embroidered in your choice of color. An apron of this quality makes a welcome gift for any cook.",
                 price: 19.95,
@@ -55,7 +55,7 @@ module.exports = [
         },
         {
             id: 4,
-            name: "Williams-Sonoma Classic Apron, French Blue",
+            name: "Williams-Sonoma Classic Apron, Red Flame",
             properties: {
                 description: "A generously sized is a necessity in any kitchen, and ours will brighten yours with lively color. Sewn of thick cotton, it can be personalized or monogrammed with up to nine characters, all the same height, embroidered in your choice of color. An apron of this quality makes a welcome gift for any cook.",
                 price: 19.95,

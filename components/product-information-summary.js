@@ -5,11 +5,11 @@ class ProductSummary extends Component {
         super(props)
 
     }
-    
+
     render() {
         return (
             <div>
-                <h1 className="product-title">{this.props.product.name}</h1>
+                <h1 className="product-title">{this.props.productName}</h1>
                 <p className="product-description">{this.props.product.properties.description}.</p>
                 <ul className="product-bullets">
                     <li className="product-bullet-item"><span id="bullet">{'\u2022'}</span> Durable 100% cotton construction.</li>
@@ -19,7 +19,7 @@ class ProductSummary extends Component {
                 </ul>
 
                 <div className="product-addtocart">
-                    <p className="product-price">{this.props.product.properties.price}</p>
+                    <p className="product-price">${`${this.props.product.properties.price}`}</p>
                     <input type="number" className="product-quantity" placeholder="QTY" />
                 </div>
 

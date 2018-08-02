@@ -7,25 +7,25 @@ import ProductInformation from './product-information';
 class Product extends Component {
     constructor(props) {
         super(props);
-        console.log(catalog)
         this.state = {
             catalog,
-            product: catalog[0]
+            product: catalog[0],
+            productName: catalog[0].name
         };
-      }
+    }
 
     componentDidMount() {
         this.setState({
             product: this.props.product
         })
     }
-    
+
     render() {
-        var {catalog} = this.state;
+        var { catalog } = this.state;
         return (
             <main className="productGrid">
-               <ProductImage catalog={catalog} products={this.props.catalog} product={this.props.product}/>
-               <ProductInformation products={this.props.catalog} product={this.props.product}/>
+                <ProductImage products={catalog} product={this.props.product} />
+                <ProductInformation productName={this.state.productName} products={this.props.catalog} product={this.props.product} />
             </main>
         );
     }

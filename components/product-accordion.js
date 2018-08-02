@@ -1,24 +1,19 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import styled from 'styled-components';
 import AccordionPanel from './product-accordion-panel';
 
 class Accordion extends Component {
     constructor(props) {
         super(props)
-
-        this.state = {
-           shown: {}
-        }
     }
 
-    
-
-    render () {
+    render() {
         return (
-                <div>
-                    <AccordionPanel name="Summary" handlePanelClick={this.handlePanelClick} panel="summary" />
-                    <AccordionPanel name="Dimensions" handlePanelClick={this.handlePanelClick} panel="dimensions"/>
-                    <AccordionPanel name="Shipping" handlePanelClick={this.handlePanelClick} panel="shipping"/>
-                </div>
+            <div className="accordion">
+                <AccordionPanel name="summary" defaultExpanded={true} />
+                <AccordionPanel name="dimensions" defaultExpanded={false}/>
+                <AccordionPanel name="Shipping" defaultExpanded={false} />
+            </div>
         )
     }
 }

@@ -1,6 +1,6 @@
 @font-face {
   font-family: Flama;
-  src: url('FlamaBook Regular.otf');
+  src: url('./assets/fonts/FlamaBook Regular.otf');
 }
 
 ul {
@@ -24,9 +24,11 @@ header {
 nav {
   width: 1050px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 
-#navlinks {
+.navlinks {
   display: flex;
   justify-content: space-around;
 
@@ -34,7 +36,7 @@ nav {
   color: white;
 }
 
-#navlinks > li {
+.navlinks > li {
   padding: 0.7em .8em;
   list-style: none;
   white-space: nowrap;
@@ -55,6 +57,13 @@ nav {
 
 .home {
   background-color: #2a3658;
+  padding: 0.7em .8em;
+  list-style: none;
+  white-space: nowrap;
+  font-family: Flama;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-left: .2em;
 }
 
 #breadcrumb {
@@ -68,17 +77,13 @@ nav {
   color: gray;
 }
 
-.breadcrumb-link::before {
-  content: '>';
-  padding: 0 .4em;
-}
-
-.breadcrumb-link {
-
+.breadcrumb-arrow {
+  padding: 0 .3em;
 }
 
 #breadcrumb li:last-child {
   color: black;
+  font-weight: 700;
 }
 
 /* make the button shrink slightly on click */
@@ -102,8 +107,13 @@ button:active {
   grid-template-areas: "product-image product-information";
 }
 
+.product-information {
+  width: 95%;
+}
+
 .product-image {
   grid-area: product-image;
+  padding-top: 2em;
 }
 
 .product-information {
@@ -117,10 +127,12 @@ button:active {
 
 .product-description {
   font-family: Flama;
+  font-size: .9em;
 }
 
 .product-bullets {
   margin-left: 1.5em;
+  font-size: .9em;
 }
 
 .product-bullet-item {
@@ -137,13 +149,25 @@ button:active {
   font-size: 1.5em;
 }
 
+.largeImage {
+  display: flex;
+  justify-content: center;
+}
+
 .product-thumbnails__images {
   display: flex;
   list-style: none;
 }
 
+
+
+.thumbnail:focus {
+  border: 3px solid black;
+  outline: none;
+  
+}
+
 .product-thumbnails__images > li {
-  padding: 1em 1em;
   margin: 1em 0;
 }
 
@@ -166,7 +190,23 @@ button:active {
   display: flex;
 }
 
-/* PRODUCT INFORMATION ARROW */
+/* PRODUCT INFORMATION ACCORDION */
+
+.accordion {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin-top: 1em;
+}
+
+.accordion div:nth-child(2) {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.expand-panel:nth-child(2) {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
 
 .info-drawer {
   display: none;
@@ -176,14 +216,17 @@ button:active {
   display: block;
 }
 
-.individual-panel {
-  padding: 1em 0;
+.expand-panel {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1em;
+  width: 5em;
 }
 
-.product-summary {
+.accordion-panel {
+  padding: 1em 0;
+  text-transform: uppercase;
 }
 
 .middle-drawer {
@@ -200,106 +243,83 @@ button:active {
   margin-right: .5em;
 }
 
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: .5em solid transparent;
+  border-right: .5em solid transparent;
+  border-top: .5em solid black;
+  margin-right: .5em;
+}
+
+/****** FOOTER *****/
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EDECED;
+  width: 1050px;
+  margin: 0 auto;
+  border-top: 2px solid black;
+  margin-bottom: 2em;
+}
+
+.footer-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8em;
+}
+
+.footer-break {
+  padding: .3em;
+}
+
+
+
 /****** MODAL ******/
 
-[role="alertdialog"],
 [role="dialog"] {
   box-sizing: border-box;
   padding: 15px;
   border: 1px solid #000;
   background-color: #fff;
   min-height: 100vh;
+  position: absolute;
+  top: 2rem;
+  left: 50vw;  /* move to the middle of the screen (assumes relative parent is the body/viewport) */
+  transform: translateX(-50%);  /* move backwards 50% of this element's width */
+  min-width: calc(640px - (15px * 2));  /* == breakpoint - left+right margin */
+  min-height: auto;
+  box-shadow: 0 19px 38px rgba(194, 166, 166, 0.12), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+  font-family: Flama;
+  font-size: 1em;
 }
 
-@media screen and (min-width: 640px) {
-  [role="alertdialog"],
-  [role="dialog"] {
-    position: absolute;
-    top: 2rem;
-    left: 50vw;  /* move to the middle of the screen (assumes relative parent is the body/viewport) */
-    transform: translateX(-50%);  /* move backwards 50% of this element's width */
-    min-width: calc(640px - (15px * 2));  /* == breakpoint - left+right margin */
-    min-height: auto;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.12), 0 15px 12px rgba(0, 0, 0, 0.22);
-  }
-}
-
-.dialog_label {
-  text-align: center;
-}
-
-.dialog_form {
-  margin: 15px;
-}
-
-.dialog_form .label_text {
-  box-sizing: border-box;
-  padding-right: 0.5em;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: bold;
-  width: 30%;
-  text-align: right;
-}
-
-.dialog_form .label_info {
-  box-sizing: border-box;
-  padding-right: 0.5em;
-  font-size: 12px;
-  width: 30%;
-  text-align: right;
-  display: inline-block;
+.basketItem {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  width: 70%;
 }
 
 
-.dialog_form_actions {
-  text-align: right;
-  padding: 0 20px 20px;
+.addedToBasket {
+  border-bottom: 2px solid black;
 }
 
-.dialog_close_button {
-  float:right;
-  position:absolute;
-  top:10px;
-  left:92%;
-  height:25px;
+.continueShopping {
+  background-color: red;
+  color: white;
+  padding: 1em;
+  font-family: Flama;
+  font-size: 1em;
+  text-transform: uppercase;
 }
 
-.dialog_close_button img {
-  border:0;
-}
-
-.dialog_desc {
-  padding: 10px 20px;
-}
-
-/* native <dialog> element uses the ::backdrop pseudo-element */
-/*dialog::backdrop,*/
-.dialog-backdrop {
-  display: none;
-  position: fixed;
-  overflow-y: auto;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-
-@media screen and (min-width: 640px) {
-  .dialog-backdrop {
-    background: rgba(0, 0, 0, 0.3);
-  }
-}
-
-.dialog-backdrop.active {
-  display: block;
-}
-
-.no-scroll {
-  overflow-y: auto !important;
-}
-
-/* this is added to the body when a dialog is open */
-.has-dialog {
-  overflow: hidden;
+.shoppingButton {
+  display: flex;
+  justify-content: center;
 }
