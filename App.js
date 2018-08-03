@@ -1,30 +1,80 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+
+// Modules
+
+import axios from 'axios';
+
+// Components
+
 import Header from './components/header'
 import Nav from './components/nav'
 import Product from './components/product'
 import Footer from './components/footer';
-
-import catalog from './db.js'
 
 class App extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            product: catalog[0]
-        };
+            catalog: [],
+            currentProduct: '',
+            selectedImage: ''
+        }
 
+        this.getCatalog = this.getCatalog.bind(this);
+        this.handleImageClick = this.handleImageClick.bind(this);
+    }
+
+    getCatalog() {
+        axios.get('../catalog.json').then(response => {
+            var data = response.data;
+            this.setState({
+                catalog: data.products,
+                currentProduct: data.products[0],
+                selectedImage: data.products[0].properties.imageURL.large
+            })
+
+        })
+    }
+
+    handleImageClick(event) {
+        var thumbnail = event.target
+        console.log(thumbnail)
+        this.setState({
+            selectedImage: thumbnail.dataset.largeimage,
+            currentProduct: this.state.catalog[thumbnail.dataset.productid]
+        })
+    }
+
+    componentDidMount() {
+        this.getCatalog();
     }
 
     render() {
+        console.log(this.state)
+        let productComponent;
+        if (this.state.currentProduct !== '' && this.state.selectedImage !== '') {
+            productComponent =  <Product 
+                                    catalog={this.state.catalog} 
+                                    currentProduct={this.state.currentProduct}
+                                    selectedImage = {this.state.selectedImage}
+                                    handleImageClick = {this.handleImageClick}
+                                />
+        } else {
+            productComponent = <div>Loading</div>
+        }
+
+    
         return (
             <div>
                 <Header />
-                <Nav product={this.state.product} />
-                <Product catalog={catalog} product={this.state.product} />
+                <Nav productName={this.state.currentProduct.name}/>
+                {productComponent}
                 <Footer />
             </div>
+               
+            
 
         )
     }

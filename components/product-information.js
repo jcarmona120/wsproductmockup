@@ -9,26 +9,48 @@ class ProductInformation extends Component {
         super(props)
         this.state = {
             showModal: false,
+            value: 1
         }
+
+        this.handleChange = this.handleChange.bind(this)
         this.handleShowModal = this.handleShowModal.bind(this)
     }
-
-
     handleShowModal() {
-        console.log('button clicked')
+        
         this.setState({
-            showModal: !this.state.showModal
+            showModal: !this.state.showModal,
+            value: 1
+        })
+   
+    }
+
+    handleChange(event) {
+        this.setState({
+            value: event.target.value
         })
     }
 
     render() {
+        var {currentProduct} = this.props
+        
         return (
             <section className="product-information">
-                <ProductSummary productName={this.props.productName} product={this.props.product} handleAddToCart={this.handleShowModal.bind(this)} />
+                <ProductSummary 
+                    currentProduct={currentProduct}
+                    handleAddToCart={this.handleShowModal.bind(this)} 
+                    handleChange = {this.handleChange.bind(this)}
+                    quantity={this.state.value} />
 
-                {this.state.showModal ? <AddToCartModal activeModal={this.state.showModal} product={this.props.product} continueShopping={this.handleShowModal.bind(this)} /> : null}
+                {this.state.showModal ? 
+                    <AddToCartModal 
+                        activeModal={this.state.showModal} 
+                        product={currentProduct} 
+                        handleChange = {this.handleChange.bind(this)}
+                        continueShopping={this.handleShowModal.bind(this)} 
+                        quantity={this.state.value}/> 
+                    : null}
 
-                <Accordion product={this.props.product} handlePanelClick={this.handlePanelClick} />
+                <Accordion currentProduct={currentProduct} handlePanelClick={this.handlePanelClick} />
 
             </section>
         )

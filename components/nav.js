@@ -36,7 +36,7 @@ class Nav extends Component {
                         <span className="breadcrumb-arrow"> > </span>
                         <li>Adult Aprons</li>
                         <span className="breadcrumb-arrow"> > </span>
-                        <li>{this.props.product.name}</li>
+                        <li>{this.props.productName}</li>
                     </ul>
                 </section>
             </div>

@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="footer">
             <div className="footer-text">
                 <p>
-                    {(new Date().getFullYear())} Williams-Sonoma Inc., All Rights Reserved
+                    {(new Date().getFullYear())} {'\u00a9'}  Williams-Sonoma Inc., All Rights Reserved 
                 </p>
                 <span className="footer-break"> | </span>
                 <a href="#" className="footer-link">

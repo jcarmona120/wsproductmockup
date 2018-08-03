@@ -9,11 +9,11 @@ class Accordion extends Component {
 
     render() {
         return (
-            <div className="accordion">
+            <dl className="accordion" aria-live="polite">
                 <AccordionPanel name="summary" defaultExpanded={true} />
                 <AccordionPanel name="dimensions" defaultExpanded={false}/>
                 <AccordionPanel name="Shipping" defaultExpanded={false} />
-            </div>
+            </dl>
         )
     }
 }

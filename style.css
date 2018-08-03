@@ -159,8 +159,6 @@ button:active {
   list-style: none;
 }
 
-
-
 .thumbnail:focus {
   border: 3px solid black;
   outline: none;
