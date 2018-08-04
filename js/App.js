@@ -7,10 +7,10 @@ import axios from 'axios';
 
 // Components
 
-import Header from './components/header'
-import Nav from './components/nav'
-import Product from './components/product'
-import Footer from './components/footer';
+import Header from './components/top-level/header'
+import Nav from './components/top-level/nav'
+import Product from './components/top-level/product'
+import Footer from './components/top-level/footer';
 
 class App extends Component {
     constructor(props) {
@@ -27,7 +27,7 @@ class App extends Component {
     }
 
     getCatalog() {
-        axios.get('../catalog.json').then(response => {
+        axios.get('./js/catalog.json').then(response => {
             var data = response.data;
             this.setState({
                 catalog: data.products,

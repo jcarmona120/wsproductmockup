@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import ProductImage from './product-image';
-import ProductInformation from './product-information';
+import ProductImage from '../product-image/product-image';
+import ProductInformation from '../product-information/product-information';
 
 class Product extends Component {
     constructor(props) {

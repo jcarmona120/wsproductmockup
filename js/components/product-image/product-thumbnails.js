@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import Product from './product';
-
 class ProductThumbnails extends Component {
     constructor(props) {
         super(props)

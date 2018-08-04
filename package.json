@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "In this challenge you'll be building a webpage from scratch. Refer to the image titled `markup-challenge.jpg` while putting your page together. Feel free to use the images provided, or use your own optimized images. Dazzle us with your HTML, CSS, and JavaScript skills by",
   "main": "index.js",
+  "engines": {
+    "node": "8.3.0",
+    "npm": "5.3.0"
+  },
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
@@ -17,11 +21,11 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
     "style-loader": "^0.21.0",
     "webpack-cli": "^3.1.0"
   },
   "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   }
 }
