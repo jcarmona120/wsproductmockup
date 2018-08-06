@@ -8,6 +8,7 @@
     "npm": "5.3.0"
   },
   "scripts": {
+    "start": "node index.js",
     "build": "webpack",
     "watch": "webpack --watch",
     "devServer": "webpack-dev-server"
