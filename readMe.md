@@ -31,23 +31,27 @@ Built with Visual Studio Code with ESLint and Prettier.
 
 #### Download and extract the attached archive. Refer to the image titled "markup-challenge.jpg” while putting your page together. Feel free to use the images provided, or use your own optimized images. Dazzle us with your HTML / CSS and JavaScript skills by:
 
-###Using the small product images to update the large hero product image.
+##Using the small product images to update the large hero product image.
 
 Each product thumbnail features a data-largeimage attribute to keep track of the link to it's larger version. Each click changes the state of the large image to that of the data attribute.
 
-###Expanding and collapsing the sections on the lower right quadrant of the page.
+##Expanding and collapsing the sections on the lower right quadrant of the page.
 
 Each section can expand and collapse. Accordion panels can be added with names passed in as props from the Accordion parent component. 
 
-###Display a modal or message after the Add to Cart button is clicked.
+##Display a modal or message after the Add to Cart button is clicked.
 
 The modal pops up when the Add To Cart and features information about the item. 
 
+##Bonuses
 
-## Things I Wish I Did!
+Products are served using axios from mock database json file. When images are clicked, the names of the products are changed in both the main title of the product and the breadcrumb. 
+
+## Things I Plan to Fix
 
 - Add onChange feature to disable button if there is no amount in the quantity input
-- Used CSSTransitionGroup and styled-components to add more to the user experience. 
+- Used CSSTransitionGroup and styled-components to add more to the user experience on image change.
+- 
 
 
 
