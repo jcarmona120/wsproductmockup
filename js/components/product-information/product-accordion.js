@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import AccordionPanel from './product-accordion-panel';
 
 class Accordion extends Component {

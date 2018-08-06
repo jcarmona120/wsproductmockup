@@ -27,7 +27,7 @@ class App extends Component {
     }
 
     getCatalog() {
-        axios.get('./js/catalog.json').then(response => {
+        axios.get('./catalog.json').then(response => {
             var data = response.data;
             this.setState({
                 catalog: data.products,
@@ -54,6 +54,7 @@ class App extends Component {
     render() {
         console.log(this.state)
         let productComponent;
+        // {show component if catalog data has been passed to state}
         if (this.state.currentProduct !== '' && this.state.selectedImage !== '') {
             productComponent =  <Product 
                                     catalog={this.state.catalog} 

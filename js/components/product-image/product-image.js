@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import axios from 'axios';
-
 import LargeProductImage from './product-image-large';
 import ProductThumbnails from './product-thumbnails';
 
