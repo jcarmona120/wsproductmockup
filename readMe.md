@@ -43,10 +43,6 @@ Each section can expand and collapse. Accordion panels can be added with names p
 
 The modal pops up when the Add To Cart and features information about the item. 
 
-#### Include a reset button so that when a game ends, the board can be cleared and a new game can begin.
-
-The reset button calls a method `_resetBoard()` which calls another
-method `_getInitialState()` to reset the board.
 
 ## Things I Wish I Did!
 
